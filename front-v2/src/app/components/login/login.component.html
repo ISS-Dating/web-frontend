@@ -1,0 +1,36 @@
+<div class="login-card">
+  <div class="login-card-content">
+    <div class="header">
+      <div class="logo">
+        <div><img src="assets/logo.png" height="200"></div>
+      </div>
+      <h2>On<span class="highlight">Dating</span></h2>
+      <h3>Dating online</h3>
+    </div>
+    <form class="form"  method="post" [formGroup]="loginForm" >
+      <div class="form-field username">
+        <div class="icon">
+          <i class="far fa-user"></i>
+        </div>
+        <input type="text" placeholder="Username" formControlName="username" >
+      </div>
+      <div class="form-field password">
+        <div class="icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <input type="password" placeholder="Password" formControlName="password">
+      </div>
+
+      <button type="submit" (click)="onSubmit()">
+        Login
+      </button>
+      <div>
+        Don't have an account? <a href="">Sign Up Now</a>
+      </div>
+    </form>
+  </div>
+  <div class="login-card-footer">
+    <a href="">Forgot password?</a>
+  </div>
+</div>
+
