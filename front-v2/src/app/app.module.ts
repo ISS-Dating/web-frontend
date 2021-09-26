@@ -7,18 +7,12 @@ import {HttpClientModule} from "@angular/common/http";
 import {appRoutingModule} from "./app.routing";
 import { SearchComponent } from './components/search/search.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { HeaderComponent } from './components/header/header.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SearchComponent,
-    HeaderComponent,
-    ProfileComponent,
-    ChatComponent
+    SearchComponent
   ],
   imports: [
     BrowserModule,
