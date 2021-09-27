@@ -4,6 +4,7 @@ export interface User {
   password: string;
   email: string;
   gender: number; // 0 - male, 1 - female
+  country: string;
   city: string;
   age: number;
   description: string;

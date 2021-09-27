@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   background-image: linear-gradient(#fe7763, #fc3a5d);
   background-repeat: no-repeat;
@@ -11,6 +16,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   justify-content: center;
+  color: black;
 }
 .wrapper{
   width: 80%;
