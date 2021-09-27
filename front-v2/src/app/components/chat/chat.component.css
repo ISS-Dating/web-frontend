@@ -1,0 +1,15 @@
+.chat{
+  z-index: 2;
+  position: absolute;
+  margin-top: 50px;
+}
+p{
+  color: black;
+}
+.chat-wrapper{
+  height: 480px;
+  background: #fff;
+  border-radius: 9px;
+  z-index: 0;
+  position: relative;
+}
