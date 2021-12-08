@@ -1,15 +1,445 @@
 .search{
-  z-index: 2;
-  position: absolute;
-  margin-top: 50px;
+  /*z-index: 2;*/
+  /*position: absolute;*/
+  /*margin-top: 50px;*/
 }
 p{
   color: black;
 }
 .search-wrapper{
-  height: 480px;
+  /*height: 480px;*/
   background: #fff;
   border-radius: 9px;
   z-index: 0;
   position: relative;
 }
+button {
+  background: white;
+  display: block;
+  color: #d61e2d;
+  width: 100%;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 32px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* SEARCH START */
+
+.search-person{
+  height: 800px;
+}
+/* the loader */
+
+.load {
+  display: none;
+  margin: 150px auto;
+  width: 100px;
+  height: 100px;
+  /** height is required as absolute value **/
+  background-color: #F08080;
+  border-radius: 100px;
+  position:relative;
+  animation: pulse 2000ms linear infinite;
+  -webkit-animation: pulse 2000ms linear infinite;
+  -moz-animation: pulse 2000ms linear infinite;
+}
+
+.load i{
+  position:absolute;
+  top:28px;
+  left:24%;
+  color:white;
+  text-shadow:-1px -1px #333;
+}
+
+.load:after,
+.load:before {
+  display: inline-block;
+  margin: auto;
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #CD5C5C;
+}
+
+.load:after {
+  z-index: -100;
+  -webkit-animation: outer-ripple 2000ms linear infinite;
+  -moz-animation: outer-ripple 2000ms linear infinite;
+  animation: outer-ripple 2000ms linear infinite;
+}
+
+.load:before {
+  z-index: -200;
+  -webkit-animation: inner-ripple 2000ms linear infinite;
+  -moz-animation: inner-ripple 2000ms linear infinite;
+  animation: inner-ripple 2000ms linear infinite;
+}
+/* outer ripple */
+
+
+@keyframes pulse{
+  0% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  10% {
+    transform: scale(1.1);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.9);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+
+@-moz-keyframes pulse{
+  0% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  10% {
+    transform: scale(1.1);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.9);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes pulse{
+  0% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  10% {
+    transform: scale(1.1);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.9);
+    filter: alpha(opacity=1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+
+
+@keyframes outer-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes outer-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes outer-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+/* inner ripple */
+
+@keyframes inner-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  30% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes inner-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  30% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes inner-ripple {
+  0% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  30% {
+    transform: scale(1);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+/*PERSON FOUNDED*/
+
+
+.gallery {
+  width: 500px;
+  height: 650px;
+  background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/congruent_outline.png');
+  margin: 50px auto;
+  font-family: 'Oswald', sans-serif;
+  border: 30px solid #f0f0f0;
+  outline: 1px solid #c0c0c0;
+}
+.gallery img.main {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  position: relative;
+  left: 160px;
+  top: 25px;
+  z-index:1;
+  border: 10px solid #C0392B;
+}
+.gwrap {
+  background-color: #fff;
+  width: 440px;
+  height: 445px;
+  margin: 0 auto;
+  position: relative;
+  top: -30px;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.grid {
+  margin: 0 auto;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  -webkit-column-width: 50%;
+  -moz-column-width: 50%;
+  column-width: 50%;
+}
+
+.tile {
+  display: inline-block;
+  margin: 2px 6px;
+  height: auto;
+  width: 200px;
+  float: left;
+  transition:all 1s;
+  padding: 0px;
+}
+.tile:hover {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.tile img { height: auto; width: 200px; overflow: hidden; }
+
+.filters {
+  background-color: #C0392B;
+  width: 530px;
+  padding: 6px 0px;
+  margin: 0 auto;
+  position: relative;
+  top: -22px;
+  text-align: center;
+}
+.filters input[type="radio"] { display:none; }
+.filters label {
+  width: 100px;
+  background: #ffffff;
+  color: #222222;
+  padding: 5px 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 0px 2px;
+  cursor: pointer;
+  position: relative;
+  top: -3px;
+}
+
+.filters input[type="radio"][id="temp"]:checked + label {
+  background:#6666ff;
+}
+.filters input[type="radio"][id="temp"]:checked ~ .skin, input[type="radio"][id="temp"]:checked ~ .mini {
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+.filters input[type="radio"][id="skin"]:checked + label {
+  background:#ff4466;
+}
+.filters input[type="radio"][id="skin"]:checked ~ .temp, input[type="radio"][id="skin"]:checked ~ .mini {
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+.filters input[type="radio"][id="mini"]:checked + label {
+  background:#66dd99;
+}
+.filters input[type="radio"][id="mini"]:checked ~ .temp, input[type="radio"][id="mini"]:checked ~ .temp {
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+.tile a { text-decoration: none; }
+.tile a:hover {
+  color: #111;
+}
+.tile .title {
+  background-color: #C0392B;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 11px;
+  font-style: italic;
+  position: relative;
+  top: -10px;
+}
+.tile .category {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-size: 6px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 4px;
+  position: relative;
+  top: -10px;
+  font-family: 'Open Sans', sans-serif;
+}
+.gupdate {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #c0c0c0;
+  margin: 40px auto;
+  background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/congruent_outline.png');
+  font-family: 'Oswald', sans-serif;
+}
+.gupdate .title {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  position: relative;
+  top: 15px;
+  letter-spacing: 3px;
+  font-style: italic;
+}
+.gupdate .uwrap {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 330px;
+  height: 70px;
+  top: 30px;
+  position: relative;
+  padding: 20px;
+  overflow: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+

@@ -7,7 +7,13 @@
       <h2>Q<span class="highlight">Date</span></h2>
       <h3>Dating online</h3>
     </div>
-    <form class="form"  method="post" [formGroup]="loginForm" >
+    <form class="form"  method="post" [formGroup]="registerForm" >
+      <div class="form-field email">
+        <div class="icon">
+          <i class="far fa-user"></i>
+        </div>
+        <input type="text" placeholder="Email" formControlName="email" >
+      </div>
       <div class="form-field username">
         <div class="icon">
           <i class="far fa-user"></i>
@@ -22,15 +28,12 @@
       </div>
 
       <button type="submit" (click)="onSubmit()">
-        Login
+        Register
       </button>
       <div>
-        Don't have an account? <a href="/register">Sign Up Now</a>
+       You already registered? <a href="/qdate/login">Sign In</a>
       </div>
     </form>
-  </div>
-  <div class="login-card-footer">
-    <a href="">Forgot password?</a>
   </div>
 </div>
 

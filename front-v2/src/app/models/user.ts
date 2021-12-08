@@ -1,15 +1,34 @@
+import {Questions} from './questions';
+
 export interface User {
   id: number;
+  photo_url: string;
   name: string;
+  surname: string;
+  username: string;
   password: string;
   email: string;
-  gender: number; // 0 - male, 1 - female
-  country: string;
+  gender: string;
   city: string;
+  country: string;
   age: number;
   description: string;
-  lookingFor: number; // 0 - male, 1 - female, 2- both
-  status: string; // free, married, etc...
+  looking_for: string;
+  status: string;
   education: string;
-  mood: number; // 0- sad, 1- normal, 2- happy. It will be useful for neural network for example. We can pick up people with same mood.
+  mood: string;
+  banned: boolean;
+  role: string;
+  stats: {
+    id: 1,
+    user_id: 1,
+    banned_before: false,
+    users_met: 0,
+    messages_sent: 0,
+    average_message_length: 0,
+    links_in_messages: 0
+  };
+  questions: Questions;
+  registration_date: string;
+  links: [];
 }

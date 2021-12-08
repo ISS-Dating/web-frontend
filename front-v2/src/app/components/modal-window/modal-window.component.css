@@ -1,0 +1,258 @@
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+.wrapper{
+  background-color: #a9e5e5;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+header{
+  height: 64px;
+  color:#fff;
+  text-align: center;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+}
+
+header h2{
+  font-size: 1.8em;
+  margin-top: 0;
+  padding-top: .8em;
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+
+.info{
+  text-align: center;
+}
+
+.info h3, fieldset legend{
+  /* 	color: #444444; */
+}
+
+.info h3{
+  margin-top: 0;
+  padding-top: 1.5em;
+  font-size: 2.5em;
+}
+
+.info p{
+  font-size: .85em;
+  border-bottom: 4px solid rgba(45,57,69);
+  padding-bottom: 3em;
+  margin-bottom: 0;
+}
+
+form{
+  border-top: 2px solid rgba(45,57,69);
+  margin-top: 2px;
+  padding-top: 1em;
+}
+
+fieldset{
+  border: none;
+  padding: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top:1em;
+  padding-bottom:1em;
+}
+
+fieldset legend{
+  font-size: 1.65em;
+  font-weight: bold;
+  padding-bottom: .75em;
+}
+
+.contact-info label{
+  display: block;
+  padding-bottom: .65em;
+  font-size: 1.25em;
+}
+
+.newsletter label{
+  font-size: 1.25em;
+}
+
+.contact-info input , select , textarea{
+  box-shadow: 0 0 1px ;
+  width: 100%;
+  height: 4em;
+  background-color: #fff;
+  outline: none;
+  border:none;
+  border-radius: 5px;
+  border-color: #fff;
+  text-indent: 10px;
+  transition: border-color .4s ease-in-out;
+}
+
+textarea{
+  height: 85px;
+  padding-top:10px;
+}
+
+.contact-info input:focus , select:focus , textarea:focus{
+  border: 2px solid #46698B;
+  border-radius: 0;
+}
+
+#name:focus,
+#email:focus{
+  border: 2px solid #FF7463;
+}
+
+[type="submit"]{
+  width: 100%;
+  /* 	background-color: #4EBBB5; */
+  /*   background-color: #f8f8e7; */
+  background-color: #eeeec6;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  color: #444444;
+  font-size: 1.25em;
+}
+
+[type="submit"]:hover{
+  opacity: .8;
+}
+
+.newsletter [type="checkbox"]{
+  transform: scale(1.4);
+}
+
+::placeholder{
+  text-align: right;
+  padding-right: 1em;
+}
+
+.footer p{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  margin: 0;
+}
+
+@media(min-width: 760px){
+
+  .wrapper{
+    max-width: 685px;
+  }
+
+  .info h3{
+    font-size: 2.5em;
+    letter-spacing: 1px;
+  }
+
+  .info p{
+    font-size: 1.1em;
+  }
+
+  .contact-info label{
+    display: inline-block;
+    width: 20%;
+  }
+
+  .contact-info input , select{
+    width: 78%;
+  }
+
+  .newsletter .checkboxes p{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+@media(min-width:1024px){
+
+  .wrapper{
+    width: 90%;
+    max-width: 950px;
+  }
+
+  .contact-info label{
+    display: inline-block;
+    width: 26%;
+  }
+
+  .contact-info input , select{
+    width: 72%;
+  }
+
+  .contact-info p , .newsletter p{
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  form{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    min-width: 340px;
+    height: 500px;
+    justify-content: space-around;
+  }
+
+  fieldset{
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .contact-info{
+    width: 55%;
+  }
+
+  .newsletter{
+    width: 41%;
+  }
+
+  form{
+    padding-top: 1em;
+  }
+}

@@ -7,7 +7,7 @@
           <img src="assets/logo.png" width="200" alt="Profile Image">
         </div>
         <div class="profile-nav-info">
-          <h3 class="user-name">{{currentUser.name}}</h3>
+          <h3 class="user-name">{{currentUser.username}}</h3>
           <div class="address">
             <p id="state" class="state">{{currentUser.city}},</p>
             <span id="country" class="country">{{currentUser.country}}.</span>
@@ -34,73 +34,54 @@
               </p>
             </div>
             <div class="profile-btn">
-              <button class="createbtn" id="Create-post"><i class="fa fa-plus"></i> Settings</button>
+              <button class="createbtn" id="Create-post" (click)="setEditState()"><i class="fa fa-plus"></i> Update profile</button>
             </div>
           </div>
         </div>
         <div class="right-side">
           <div class="profile-body">
             <div class="profile-posts tab">
-              <div id="card">
-                <ul id="question-list" class="question-list">
-                  <li class="question-container">
-                    <div class="flip-top">
-                      <div class="question-title">
-                        Hello World!
-                      </div>
-                      <div class="question-arrow">
-                        >
-                      </div>
-                    </div>
-                    <div class="flip-front">
-                      <div class="flip-front-bg"></div>
-                    </div>
+              <div id="faq">
+                <h1>QUESTIONS</h1>
+                <ul>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>What are you looking?</h2>
+                    <p>{{currentUser.questions.main_question}}</p>
                   </li>
-                  <li class="question-container">
-                    <div class="flip-top">
-                      <div class="question-title">
-                        Who is this ?
-                      </div>
-                      <div class="question-arrow">
-                        >
-                      </div>
-                    </div>
-                    <div class="flip-front">
-                      <div class="flip-front-bg"></div>
-                    </div>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>How would you describe yourself?</h2>
+                    <p>{{currentUser.questions.biography_question}}</p>
                   </li>
-                  <li class="question-container">
-                    <div class="flip-top">
-                      <div class="question-title">
-                        What is this?
-                      </div>
-                      <div class="question-arrow">
-                        >
-                      </div>
-                    </div>
-                    <div class="flip-front">
-                      <div class="flip-front-bg"></div>
-                    </div>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Where did you go on your last trip?</h2>
+                    <p>{{currentUser.questions.travel_question}}</p>
                   </li>
-                  <li class="question-container">
-                    <div class="flip-top">
-                      <div class="question-title">
-                        Hooo.....  just do it!
-                      </div>
-                      <div class="question-arrow">
-                        >
-                      </div>
-                    </div>
-                    <div class="flip-front">
-                      <div class="flip-front-bg"></div>
-                    </div>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>How many meals do you typically eat in one day?</h2>
+                    <p>{{currentUser.questions.food_question}}</p>
+                  </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Can you describe your current job?</h2>
+                    <p>{{currentUser.questions.work_question}}.</p>
                   </li>
                 </ul>
               </div>
             </div>
+          </div>
+
         </div>
       </div>
-
     </div>
   </div>
 </div>
+<app-modal-window *ngIf="isEdit"></app-modal-window>

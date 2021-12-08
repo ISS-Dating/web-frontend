@@ -1,0 +1,11 @@
+{
+  "/login": {
+    "target": "http://localhost:8090",
+    "secure": false
+  },
+
+  "/register": {
+    "target": "http://localhost:8090",
+    "secure": false
+  }
+}

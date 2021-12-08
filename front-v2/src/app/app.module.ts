@@ -10,6 +10,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { RegisterComponent } from './components/register/register.component';
+import {ModalWindowComponent} from './components/modal-window/modal-window.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ChatComponent } from './components/chat/chat.component';
     SearchComponent,
     HeaderComponent,
     ProfileComponent,
-    ChatComponent
+    ChatComponent,
+    RegisterComponent,
+    ModalWindowComponent
   ],
   imports: [
     BrowserModule,

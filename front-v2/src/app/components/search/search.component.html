@@ -1,9 +1,69 @@
-
-<app-header></app-header>
 <div class="search-wrapper">
-  <div class="search">
-    <p>search works!</p>
+
+  <div class="">
+    <app-header></app-header>
+
+    <div class="search">
+
+      <div class="search-person">
+        <div class="start" id="start-button">
+          <button type="submit" (click)="startSearch()">
+            Search
+          </button>
+        </div>
+        <div class="search-start" >
+          <div class="load" id="load">
+            <i class="fa fa-heartbeat fa-3x"></i>
+          </div>
+        </div>
+        <div class="gallery" id="gallery">
+          <img class="main" src="https://67.media.tumblr.com/f13e90901c011f22bd9047171bbd597c/tumblr_inline_nvum62YzdQ1qlt39u_500.gif" />
+          <div class="gwrap">
+            <br><br>
+            <div class="grid">
+              <div class="tile">
+                  <div class="title">{{currentUser.questions.biography_question}}</div>
+                  <div class="category">Skin</div>
+              </div>
+              <div class="tile">
+                  <div class="title">{{currentUser.questions.travel_question}}</div>
+                  <div class="category">Want Ad / Shipper</div>
+              </div>
+              <div class="tile">
+                  <div class="title">{{currentUser.questions.food_question}}</div>
+                  <div class="category">Comms / Texting</div>
+              </div>
+              <div class="tile">
+                  <div class="title">{{currentUser.questions.work_question}}</div>
+                  <div class="category">Comms / Texting</div>
+              </div>
+              <div class="tile">
+                  <div class="title">{{currentUser.questions.main_question}}</div>
+              </div>
+              <div class="tile">
+                <div class="title"><input type="text"></div>
+              </div>
+              <div class="tile">
+                <div class="title"><input type="text"></div>
+              </div>
+              <div class="tile">
+                <div class="title"><input type="text"></div>
+              </div>
+              <div class="tile">
+                  <div class="title"><input type="text"></div>
+              </div>
+              <div class="tile">
+                  <div class="title"><input type="text"></div>
+              </div>
+            </div>
+
+            <div>
+              <button (click)="sendQuestions()">Send</button>
+            </div>
+            <p>{{timeLeft}} Seconds left</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
-
-</div>

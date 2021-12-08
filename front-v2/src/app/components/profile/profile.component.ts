@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user';
-import {LoginService} from '../../services/login.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,9 +10,11 @@ import {LoginService} from '../../services/login.service';
 export class ProfileComponent implements OnInit {
 
   public currentUser: User;
+  isEdit = false;
+
 
   constructor(
-    private authService: LoginService
+    private authService: AuthService
   ) {
     this.currentUser = authService.currentUserValue;
   }
@@ -20,4 +22,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  setEditState(): void {
+    this.authService.isEdit = true;
+    this.isEdit = this.authService.isEdit;
+  }
 }

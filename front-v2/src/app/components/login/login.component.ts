@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {LoginService} from '../../services/login.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +13,13 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   error = '';
+
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private loginService: LoginService) {
+              private loginService: AuthService) {
     if (this.loginService.currentUserValue) {
-      this.router.navigate(['search']);
+      this.router.navigate(['qdate/search']);
     }
 
   }
@@ -46,9 +47,10 @@ export class LoginComponent implements OnInit {
     console.log(this.f.username.value, this.f.password.value);
     this.loginService.login(this.f.username.value, this.f.password.value).pipe().subscribe(
       () => {
-        this.router.navigate(['search']);
+        this.router.navigate(['qdate/search']);
       },
-        (error: string) => {
+      (error: string) => {
+        console.log(error);
         this.error = error;
         this.loading = false;
       });
