@@ -23,14 +23,15 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById('load').style.display = 'none';
-    document.getElementById('gallery').style.display = 'none';
+    document.getElementById('gallery1').style.display = 'none';
+    document.getElementById('gallery2').style.display = 'none';
   }
 
-  animateLoading(time: number): void{
+  animateLoading(time: number , name: string): void {
     setTimeout(() => {
       document.getElementById('load').style.display = 'none';
 
-      document.getElementById('gallery').style.display = 'block';
+      document.getElementById(name).style.display = 'block';
 
     }, time);
   }
@@ -41,14 +42,17 @@ export class SearchComponent implements OnInit {
     document.getElementById('load').style.display = 'block';
     document.getElementById('start-button').style.display = 'none';
 
-    this.animateLoading(1000);
+    this.animateLoading(1000, 'gallery1');
 
     this.startTimer();
   }
 
   sendQuestions(): void {
-    document.getElementById('gallery').style.display = 'none';
+    document.getElementById('gallery1').style.display = 'none';
     document.getElementById('load').style.display = 'block';
+    document.getElementById('gallery2').style.display = 'none';
+
+    this.animateLoading(3000, 'gallery2');
   }
 
   startTimer(): void {
@@ -60,6 +64,12 @@ export class SearchComponent implements OnInit {
         this.sendQuestions();
       }
     }, 1000);
+  }
+
+  makeLike(): void {
+    window.alert('Your like has been saved. You will be notified when you have both likes.');
+    document.getElementById('start-button').style.display = 'block';
+    document.getElementById('gallery2').style.display = 'none';
   }
 
 }

@@ -11,59 +11,115 @@
             Search
           </button>
         </div>
-        <div class="search-start" >
+        <div class="search-start">
           <div class="load" id="load">
             <i class="fa fa-heartbeat fa-3x"></i>
           </div>
         </div>
-        <div class="gallery" id="gallery">
-          <img class="main" src="https://67.media.tumblr.com/f13e90901c011f22bd9047171bbd597c/tumblr_inline_nvum62YzdQ1qlt39u_500.gif" />
-          <div class="gwrap">
-            <br><br>
-            <div class="grid">
-              <div class="tile">
+          <div class="gallery" id="gallery1">
+            <div class="gwrap">
+              <br><br>
+              <div class="grid">
+                <div class="tile">
                   <div class="title">{{currentUser.questions.biography_question}}</div>
                   <div class="category">Skin</div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title">{{currentUser.questions.travel_question}}</div>
                   <div class="category">Want Ad / Shipper</div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title">{{currentUser.questions.food_question}}</div>
                   <div class="category">Comms / Texting</div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title">{{currentUser.questions.work_question}}</div>
                   <div class="category">Comms / Texting</div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title">{{currentUser.questions.main_question}}</div>
-              </div>
-              <div class="tile">
-                <div class="title"><input type="text"></div>
-              </div>
-              <div class="tile">
-                <div class="title"><input type="text"></div>
-              </div>
-              <div class="tile">
-                <div class="title"><input type="text"></div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title"><input type="text"></div>
-              </div>
-              <div class="tile">
+                </div>
+                <div class="tile">
                   <div class="title"><input type="text"></div>
+                </div>
+                <div class="tile">
+                  <div class="title"><input type="text"></div>
+                </div>
+                <div class="tile">
+                  <div class="title"><input type="text"></div>
+                </div>
+                <div class="tile">
+                  <div class="title"><input type="text"></div>
+                </div>
               </div>
+
+              <div>
+                <button (click)="sendQuestions()">Send</button>
+              </div>
+              <p>{{timeLeft}} Seconds left</p>
             </div>
 
-            <div>
-              <button (click)="sendQuestions()">Send</button>
+        </div>
+
+          <div class="gallery" id="gallery2">
+            <img class="main"
+                 src="https://67.media.tumblr.com/f13e90901c011f22bd9047171bbd597c/tumblr_inline_nvum62YzdQ1qlt39u_500.gif"/>
+            <div class="gwrap">
+              <br><br>
+              <div class="grid">
+                <div class="tile">
+                  <div class="title">{{currentUser.questions.biography_question}}</div>
+                  <div class="category">Skin</div>
+                </div>
+                <div class="tile">
+                  <div class="title">{{currentUser.questions.travel_question}}</div>
+                  <div class="category">Want Ad / Shipper</div>
+                </div>
+                <div class="tile">
+                  <div class="title">{{currentUser.questions.food_question}}</div>
+                  <div class="category">Comms / Texting</div>
+                </div>
+                <div class="tile">
+                  <div class="title">{{currentUser.questions.work_question}}</div>
+                  <div class="category">Comms / Texting</div>
+                </div>
+                <div class="tile">
+                  <div class="title">{{currentUser.questions.main_question}}</div>
+                </div>
+                <div class="tile">
+                  <div class="title">Response1</div>
+                </div>
+                <div class="tile">
+                  <div class="title">Response2</div>
+                </div>
+                <div class="tile">
+                  <div class="title">Response3</div>
+                </div>
+                <div class="tile">
+                  <div class="title">Response4</div>
+                </div>
+                <div class="tile">
+                  <div class="title">Response5</div>
+                </div>
+              </div>
+
+              <div class="rating">
+                <!-- Thumbs up -->
+                <div class="like grow">
+                  <i class="fa fa-thumbs-up fa-3x like" aria-hidden="true" (click)="makeLike()"></i>
+                </div>
+                <!-- Thumbs down -->
+                <div class="dislike grow">
+                  <i class="fa fa-thumbs-down fa-3x like" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
-            <p>{{timeLeft}} Seconds left</p>
           </div>
         </div>
+
       </div>
     </div>
-
   </div>
